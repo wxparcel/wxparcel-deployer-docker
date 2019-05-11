@@ -1,6 +1,4 @@
 version: "3"
-build: ./dir
-image: webapp:wxdt:1.0
 services:
   wxdt:
     build:
