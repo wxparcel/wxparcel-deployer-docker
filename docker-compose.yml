@@ -7,7 +7,6 @@ services:
       context: ./
       dockerfile: Dockerfile
     image: "wxparcel/wxdt:1.0"
-    environment:
     volumes:
     - ./logs:/tmp/wxdt/logs
     ports:
