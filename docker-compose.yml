@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  wxdt:
+    image: "wxparcel/wxdt:1.0"
+    environment:
+    volumes:
+      - ./logs:/tmp/wxdt/logs
+    ports:
+      - "3064:3000"
