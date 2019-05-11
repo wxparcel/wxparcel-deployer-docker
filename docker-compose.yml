@@ -1,9 +1,14 @@
-version: "3.7"
+version: "3"
+build: ./dir
+image: webapp:wxdt:1.0
 services:
   wxdt:
+    build:
+      context: ./
+      dockerfile: Dockerfile
     image: "wxparcel/wxdt:1.0"
     environment:
     volumes:
-      - ./logs:/tmp/wxdt/logs
+    - ./logs:/tmp/wxdt/logs
     ports:
-      - "3064:3000"
+    - "3064:3000"
