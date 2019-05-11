@@ -1,8 +1,13 @@
 #! /bin/bash
 
-Xvfb $DISPLAY -ac &
+pids=$(pidof /usr/bin/Xvfb)
+if [ -n "$pids" ]; then
+  echo 'Xvfb is running'
+else
+  Xvfb $DISPLAY -ac &
+fi
 
-if [ ! -d "$HOME/.config/wechat_web_devtools/Default/.ide-status" ]; then
+if [ ! -f "$HOME/.config/wechat_web_devtools/Default/.ide-status" ]; then
   $HOME/devtool/bin/wxdt install
   echo "On" > $HOME/.config/wechat_web_devtools/Default/.ide-status
   ${HOME}/devtool/bin/cli
