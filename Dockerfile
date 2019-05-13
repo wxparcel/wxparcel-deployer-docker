@@ -67,12 +67,12 @@ RUN git clone https://github.com/cytle/wechat_web_devtools.git ${HOME}/devtool
 # Update and install newest version
 RUN ${HOME}/devtool/bin/update_nwjs.sh && rm -rf /tmp/wxdt_xsp
 # Fix cp /* error
-COPY ./replace_weapp_vendor.sh ${HOME}/devtool/bin/replace_weapp_vendor.sh
+COPY ./wxdt/replace_weapp_vendor.sh ${HOME}/devtool/bin/replace_weapp_vendor.sh
 RUN chmod +x ${HOME}/devtool/bin/replace_weapp_vendor.sh
 
 # Install launch shell
-COPY ./launch.sh ${HOME}/launch.sh
-RUN chmod +x ${HOME}/launch.sh
+COPY ./scripts/launch.sh ${HOME}/devtool/launch.sh
+RUN chmod +x ${HOME}/devtool/launch.sh
 
 EXPOSE 3000
-ENTRYPOINT ["/root/launch.sh"]
+ENTRYPOINT ["/root/devtool/launch.sh"]
