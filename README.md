@@ -1,6 +1,6 @@
 # Docker
 
-[Docker Hub](https://cloud.docker.com/u/wxparcel/repository/docker/wxparcel/wxdt)
+[Docker Hub](https://hub.docker.com/r/wxparcel/wxdt)
 
 ## 安装
 
